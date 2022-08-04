@@ -7,13 +7,7 @@ def bubble_sort(arr):
 
 def insertion_sort(arr):
     pass
-
-def selection_sort(arr):
-    pass
-
-def merge_sort(arr):
-    pass
-
+    
 def quick_sort(arr):
     pass
 
