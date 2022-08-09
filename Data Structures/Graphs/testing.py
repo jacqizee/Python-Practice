@@ -5,8 +5,6 @@ import unittest
 class TestGraph(unittest.TestCase):
     def setUp(self) -> None:
         self.mta_stations = Graph()
-    
-    def test_graph_get_path(self):
         flushing = Vertex('Flushing')
         manhattan = Vertex('Manhattan')
         corona = Vertex('Corona')
@@ -16,11 +14,17 @@ class TestGraph(unittest.TestCase):
         self.mta_stations.add_vertex(corona)
         self.mta_stations.add_edge(flushing, corona)
         self.mta_stations.add_edge(manhattan, flushing)
+    
+    def test_graph_get_path(self):
+        self.assertTrue(self.mta_stations.find_path_by_value('Flushing', 'Corona'))
+        self.assertTrue(self.mta_stations.find_path_by_value('Manhattan', 'Corona'))
+        self.assertFalse(self.mta_stations.find_path_by_value('Flushing', 'Bronx'))
 
-        self.assertTrue(self.mta_stations.find_path(flushing, corona))
-        self.assertTrue(self.mta_stations.find_path(manhattan, corona))
-        self.assertFalse(self.mta_stations.find_path(flushing, bronx))
+    def test_graph_dfs(self):
+        self.assertEqual(self.mta_stations.dfs('Manhattan', 'Corona'), ['Manhattan', 'Flushing', 'Corona'])
 
+    def test_graph_bfs(self):
+        self.assertEqual(self.mta_stations.bfs('Manhattan', 'Corona'), ['Manhattan', 'Flushing', 'Corona'])
 
 if __name__ == '__main__':
     unittest.main()
