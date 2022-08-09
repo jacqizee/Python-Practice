@@ -16,6 +16,12 @@ class TestSearchAlgos(unittest.TestCase):
         self.assertEqual(linear_search([1,2,3,4,5], 5), 4)
         self.assertEqual(linear_search([1,2,3,4,5], 1), 0)
         self.assertEqual(linear_search([1,2,3,4,5], 25), None)
+    
+    def test_bfs(self):
+        pass
+
+    def test_dfs(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()
