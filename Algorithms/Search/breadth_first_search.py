@@ -1,4 +1,5 @@
 # BFS can be achieved with the help of a queue
+# runtime of O(E+V)
 
 def bfs(graph, start_value, target_value):
     queue = [[start_value]]

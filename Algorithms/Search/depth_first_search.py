@@ -1,4 +1,5 @@
 # DFS can be achieved with the help of either a stack or recursion
+# runtime of O(E+V)
 
 # Recursive Method - more common
 def dfs(graph, current_vertex, target_vertex, visited=None):
