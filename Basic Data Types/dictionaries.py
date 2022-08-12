@@ -14,9 +14,10 @@ value = 'fruit'
 new_dict = dict.fromkeys(keys, value)
 print(f'This is a new dict created with .fromkeys(), which all have the same value: {new_dict}\n')
 
-# ? .get() returns the value of a specified key
+# ? .get() returns the value of a specified key, or sets the value if key not found
 apple_description = dictionary.get('apple')
 print(f"We can use get to get the KVP values. Apple's value is: '{apple_description}'\n")
+print(f"We can also return a default value if key is not found. Default value is: '{dictionary.get('Lychee', 'A plump red fruit native to Asia. Sweet and tart.')}'\n")
 
 # ? .items() returns a list containing tuples of KVPs in the dict
 print(f'Dictionary into KVP tuples: {dictionary.items()}\n')
