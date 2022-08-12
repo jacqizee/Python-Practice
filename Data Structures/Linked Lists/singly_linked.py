@@ -1,8 +1,16 @@
 from nodes import ListNode
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
+class SinglyLinkedList:
+    def __init__(self, head=None):
+        self.head = head
+
+    def print_list(self):
+        current_node = self.head
+        values = []
+        while current_node:
+            values.append(current_node.value)
+            current_node = current_node.next
+        print(values)
 
     def add_to_head(self, node_value):
         node_to_add = ListNode(node_value)
@@ -20,6 +28,16 @@ class LinkedList:
         
         current_node.next = node_to_add
             
-    def insert_after(self, node_value, prev_node):
+    def insert_after_value(self, node_value, prev_value):
         node_to_add = ListNode(node_value)
         
+        current_node = self.head
+
+        while current_node.next:
+            if current_node.value == prev_value:
+                node_to_add.next = current_node.next
+                current_node.next = node_to_add
+            else:
+                current_node = current_node.next
+        
+        print('Unable to find specified value, are you sure it is present in this linked list?')

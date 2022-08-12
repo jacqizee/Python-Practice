@@ -1,7 +1,7 @@
 class ListNode:
-    def __init__(self, value, pointer=None):
+    def __init__(self, value, next=None):
         self.value = value
-        self.pointer = pointer
+        self.next = next
 
 class DoublyListNode:
     def __init__(self, value, next=None, prev=None):
