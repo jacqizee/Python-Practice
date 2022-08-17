@@ -5,11 +5,18 @@ from bs4 import BeautifulSoup
 URL = "https://realpython.github.io/fake-jobs/"
 page = requests.get(URL)
 
+# Parse Page Contents w/ BS
 soup = BeautifulSoup(page.content, "html.parser")
+
+# Find Element
 results = soup.find(id="ResultsContainer")
+
+# Format Output
 # print(results.prettify())
 
 job_elements = results.find_all("div", class_="card-content")
+
+# Extract Elements
 # for job_element in job_elements:
 #     title_element = job_element.find("h2", class_="title")
 #     company_element = job_element.find("h3", class_="company")
