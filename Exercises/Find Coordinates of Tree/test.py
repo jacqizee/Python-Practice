@@ -3,7 +3,10 @@ from assignment import label_nodes
 from tree_node import TreeNode
 
 class TestAssignment(unittest.TestCase):
-    def test_one(self):
+    def setUp(self) -> None:
+        print('\n')
+
+    def test_1(self):
         root = TreeNode(0, 0)
         one = TreeNode()
         two = TreeNode()
@@ -18,10 +21,11 @@ class TestAssignment(unittest.TestCase):
         two.children = [four, five]
         five.children = [six, seven]
 
+        print('one')
         label_nodes(root)
         self.assertEqual(root.return_coords(), [(0, 0), (1, 0), (2, 0), (2, 3), (3, 0), (3, 1), (4, 1), (4, 2)])
 
-    def test_two(self):
+    def test_2(self):
         root = TreeNode(0, 0)
         one = TreeNode()
         two = TreeNode()
@@ -41,7 +45,7 @@ class TestAssignment(unittest.TestCase):
         label_nodes(root)
         self.assertEqual(root.return_coords(), [(0, 0), (1, 0), (2, 0), (2, 3), (3, 0), (3, 1), (3, 3), (4, 1), (4, 2)])
     
-    def test_three(self):
+    def test_3(self):
         root = TreeNode(0, 0)
         one = TreeNode()
         two = TreeNode()
@@ -57,7 +61,7 @@ class TestAssignment(unittest.TestCase):
         label_nodes(root)
         self.assertEqual(root.return_coords(), [(0, 0), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2), (2, 3)])
 
-    def test_four(self):
+    def test_4(self):
         root = TreeNode(0, 0)
         one = TreeNode()
         two = TreeNode()
@@ -79,7 +83,7 @@ class TestAssignment(unittest.TestCase):
         label_nodes(root)
         self.assertEqual(root.return_coords(), [(0, 0), (1, 0), (2, 0), (2, 3), (3, 0), (3, 1), (3, 3), (4, 1), (4, 2), (4, 3)])
 
-    def test_five(self):
+    def test_5(self):
         root = TreeNode(0, 0)
         one = TreeNode()
         two = TreeNode()
@@ -95,7 +99,7 @@ class TestAssignment(unittest.TestCase):
         label_nodes(root)
         self.assertEqual(root.return_coords(), [(0, 0), (1, 0), (1, 4), (1, 5), (2, 0), (2, 1), (2, 2), (2, 3)])
     
-    def test_six(self):
+    def test_6(self):
         root = TreeNode(0, 0)
         one = TreeNode()
         two = TreeNode()
